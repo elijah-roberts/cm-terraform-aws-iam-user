@@ -2,6 +2,6 @@
 Version: Keybase OpenPGP v2.0.76
 Comment: https://keybase.io/crypto
 
-${encrypted_password}
+${encrypted_data}
 -----END PGP MESSAGE-----
 

@@ -8,6 +8,16 @@ variable "login_profile_enabled" {
   default     = "true"
 }
 
+variable "access_keys_enabled" {
+  description = "Whether to create IAM access keys"
+  default     = "false"
+}
+
+variable "access_key_status" {
+  description = "The access key status to apply. Defaults to Active. Valid values are Active and Inactive"
+  default     = "Active"
+}
+
 variable "name" {
   description = "Desired name for the IAM user. We recommend using email addresses."
 }

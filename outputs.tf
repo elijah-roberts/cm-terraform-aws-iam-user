@@ -28,13 +28,34 @@ output "pgp_key" {
   value       = "${var.pgp_key}"
 }
 
+output "access_id" {
+  description = "AWS Access ID key"
+  value       = "${aws_iam_user.default.*.id}"
+}
+
 output "keybase_password_decrypt_command" {
   # https://stackoverflow.com/questions/36565256/set-the-aws-console-password-for-iam-user-with-terraform
   description = "Command to decrypt the Keybase encrypted password"
   value       = "${local.keybase_password_decrypt_command}"
 }
 
+output "keybase_secret_access_key_decrypt_command" {
+  # https://stackoverflow.com/questions/36565256/set-the-aws-console-password-for-iam-user-with-terraform
+  description = "Command to decrypt the Keybase encrypted password"
+  value       = "${local.keybase_secret_access_key_decrypt_command}"
+}
+
 output "keybase_password_pgp_message" {
   description = "PGP encrypted message (e.g. suitable for email exchanges)"
   value       = "${local.keybase_password_pgp_message}"
+}
+
+output "keybase_secret_access_key_pgp_message" {
+  description = "PGP encrypted message (e.g. suitable for email exchanges)"
+  value       = "${local.keybase_secret_access_key_pgp_message}"
+}
+
+output "credential_output" {
+  description = "Credential output for login, and api credentials"
+  value       = "${local.credentials}"
 }
